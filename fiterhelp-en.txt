@@ -1,0 +1,39 @@
+Translator's Note: The original text does not point out the plural, but my translation level is not good, so there is little correction for the plural.
+Translator's Note: This is the result of software translation plus manual debugging, so it is inevitable that there will be wrong translations.
+
+Text filtering (beta) functional description:
+
+Rows contain functions, i.e. those that satisfy the criteria are displayed. Multiple conditions are separated by\n and will be displayed if one of them is satisfied.
+
+
+Row exclusion function, i.e. excluding rows satisfying conditions. Multiple conditions are separated by\n and will be excluded as long as one of them is satisfied.
+
+The inclusion judgment is carried out first and the exclusion judgment is carried out afterwards, so the exclusion condition plays a decisive role when both inclusion and exclusion are opened simultaneously.
+
+Note: Filtering has an impact on import / export, and the rows in txt correspond to the filtered rows one by one.
+
+Conditional expression format:
+
+Wildcard description:
+* Represents 0 to any number of characters.
+? Represents a single arbitrary character.
+
+Escape character:
+The two uppercase letters after % are some kind of character.
+
+	CW - Including all Chinese characters and Japanese applicable Chinese characters
+	CS - COMMON SETTING, including Chinese characters, punctuation and common symbols
+	JK - Japanese Hiragana and Katakana.
+	FA - Full-angle characters, such as ａｅ９３＋－＂这天はい
+	HA - Half-corner characters, such as abd? 3+-.%
+	GS - General Symbols, including all punctuation and various symbols (only full-angle characters)
+	DH - Half-angle numbers, such as 1234
+
+The following is an escape character:
+\*		*
+\%	%
+\?		?
+\\		\
+\t		Tab
+
+\n used to juxtapose conditions
